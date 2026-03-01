@@ -1,0 +1,363 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+  background-color: #e4e6ec;
+}
+
+/* Espaço das bordas da tela: logo e conteúdo afastados dos limites */
+.home-page {
+  padding: 1.5rem 2rem;
+}
+@media (min-width: 640px) {
+  .home-page {
+    padding: 2rem 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .home-page {
+    padding: 2.5rem 4rem;
+  }
+}
+
+/* Mais espaço entre a logo e os cards */
+.home-header {
+  margin-bottom: 3rem;
+}
+@media (min-width: 640px) {
+  .home-header {
+    margin-bottom: 4rem;
+  }
+}
+
+/* Layout dois cards lado a lado, centralizados na tela */
+.home-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .home-cards {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+.home-cards-card-form {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+@media (min-width: 640px) {
+  .home-cards-card-form {
+    width: 380px;
+  }
+}
+.home-cards-card-list {
+  flex: 1 1 0%;
+  min-width: 0;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* Card Meus links: padrão do meuslinks.svg — título, botão Exportar, divisor, linhas com URL + ações */
+.meuslinks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+.meuslinks-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1f2025;
+  margin: 0;
+}
+.meuslinks-export-btn {
+  height: 32px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2025;
+  background: #e4e6ec;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.meuslinks-export-btn:hover {
+  background: #d4d6dc;
+}
+.meuslinks-divider {
+  height: 1px;
+  background: #e4e6ec;
+  border: none;
+  margin: 20px 0 0;
+  width: 100%;
+}
+.meuslinks-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.meuslinks-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e4e6ec;
+}
+.meuslinks-row:last-child {
+  border-bottom: none;
+}
+.meuslinks-row-content {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+.meuslinks-row-url-original {
+  font-size: 14px;
+  line-height: 18px;
+  color: #4d505c;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.meuslinks-row-url-short {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: #2c46b1;
+  margin: 0 0 4px;
+  word-break: break-all;
+}
+.meuslinks-row-meta {
+  font-size: 12px;
+  line-height: 16px;
+  color: #74798b;
+  margin: 0;
+}
+.meuslinks-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.meuslinks-icon-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1f2025;
+  background: #e4e6ec;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+.meuslinks-icon-btn:hover {
+  background: #d4d6dc;
+}
+.meuslinks-icon-btn.danger {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+.meuslinks-icon-btn.danger:hover {
+  background: #fecaca;
+}
+.meuslinks-empty,
+.meuslinks-loading {
+  padding: 32px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: #74798b;
+  margin: 0;
+}
+
+/* Card Novo link: título no topo, cada campo = label em cima + input abaixo (como Figma) */
+.home-form-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.home-form-card .home-form-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1f2025;
+  margin: 0;
+}
+.home-form-card .home-form-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+.home-form-card .home-form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+.home-form-card .home-form-label {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #4d505c;
+}
+.home-form-card .home-form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1f2025;
+  background: #fff;
+  border: 1px solid #cdcfd5;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.home-form-card .home-form-input::placeholder {
+  color: #74798b;
+}
+.home-form-card .home-form-submit {
+  width: 100%;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #2c46b1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.home-form-card .home-form-submit:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.home-form-card .home-form-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Página 404: mesmo padrão da home — fundo cinza, logo, card branco centralizado (como page404.svg) */
+.page404-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page404-card {
+  width: 100%;
+  max-width: 580px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+.page404-card .page404-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1f2025;
+  margin: 0;
+}
+.page404-card .page404-text {
+  font-size: 14px;
+  line-height: 18px;
+  color: #4d505c;
+  margin: 0;
+}
+.page404-card .page404-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #2c46b1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+.page404-card .page404-btn:hover {
+  opacity: 0.9;
+}
+.page404-card .page404-link {
+  color: #2c46b1;
+  font-weight: 600;
+  text-decoration: none;
+}
+.page404-card .page404-link:hover {
+  text-decoration: underline;
+}
+.page404-card .page404-illustration {
+  width: 128px;
+  height: auto;
+}
+
+/* Página Redirect: mesmo padrão — fundo cinza, logo, card branco centralizado (como redirect.svg) */
+.redirect-card {
+  width: 100%;
+  max-width: 580px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+.redirect-card .redirect-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1f2025;
+  margin: 0;
+}
+.redirect-card .redirect-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e4e6ec;
+  border-top-color: #2c46b1;
+  border-radius: 50%;
+  animation: redirect-spin 0.8s linear infinite;
+}
+@keyframes redirect-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
